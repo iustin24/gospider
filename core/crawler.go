@@ -362,7 +362,7 @@ func (crawler *Crawler) Start(linkfinder bool) {
 			if crawler.JsonOutput {
 			sout := SpiderOutput{
 				Input:      crawler.Input,
-				Source:     "body",
+				Source:     e.Request.URL.String(),
 				OutputType: "form",
 				Output:     urlString,
 			}
@@ -388,7 +388,7 @@ func (crawler *Crawler) Start(linkfinder bool) {
 			if crawler.JsonOutput {
 				sout := SpiderOutput{
 					Input:      crawler.Input,
-					Source:     "body",
+					Source:     e.Request.URL.String(),
 					OutputType: "form",
 					Output:     formUrl,
 				}
@@ -415,7 +415,7 @@ func (crawler *Crawler) Start(linkfinder bool) {
 			if crawler.JsonOutput {
 				sout := SpiderOutput{
 					Input:      crawler.Input,
-					Source:     "body",
+					Source:     e.Request.URL.String(),
 					OutputType: "upload-form",
 					Output:     uploadUrl,
 				}
@@ -463,7 +463,7 @@ func (crawler *Crawler) Start(linkfinder bool) {
 			if crawler.JsonOutput {
 				sout := SpiderOutput{
 					Input:      crawler.Input,
-					Source:     "body",
+					Source:     response.Request.URL.String(),
 					OutputType: "url",
 					StatusCode: response.StatusCode,
 					Output:     u,
@@ -515,7 +515,7 @@ func (crawler *Crawler) Start(linkfinder bool) {
 		if crawler.JsonOutput {
 			sout := SpiderOutput{
 				Input:      crawler.Input,
-				Source:     "body",
+				Source:     response.Request.URL.String(),
 				OutputType: "url",
 				StatusCode: response.StatusCode,
 				Output:     u,
